@@ -1,0 +1,19 @@
+{
+  "name": "istc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanscottjohnson/ISTC.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanscottjohnson/ISTC/issues"
+  },
+  "homepage": "https://github.com/ryanscottjohnson/ISTC#readme"
+}
