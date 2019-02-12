@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from './home/home.jsx';
+import Landing from './landing/landing.jsx';
 import Header from './header/header.jsx';
 import Footer from './footer/footer.jsx';
 
@@ -8,7 +8,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Header /> 
-        <Home />
+        <Landing />
         <Footer />
       </React.Fragment>
     )
