@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from '../header/header.jsx';
-// import './home.scss';
 
 class Home extends React.Component {
   constructor(props) {

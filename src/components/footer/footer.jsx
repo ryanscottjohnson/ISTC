@@ -1,6 +1,4 @@
 import React from 'react';
-// import '.footer.scss';
-
 // import logo from '';
 
 class Footer extends React.Component {
