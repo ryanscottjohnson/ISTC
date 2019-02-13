@@ -1,35 +1,35 @@
-// import React, { Component } from 'react';
+import React, { Component } from 'react';
 
-// class Hamburger extends Component {
-//   constructor(props) {
-//     super(props);
-//   }
+class Hamburger extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-//   onClick = () => {
-//     this.props.toggleNav();
-//   }
+  onClick = () => {
+    this.props.toggleNav();
+  }
 
-//   render() {
-//     return (
-//       <div onClick={this.onClick} id="hamburger">
-//         <span className="bar"></span>
-//         <span className="bar"></span>
-//         <span className="bar"></span>
-//       </div>
-//     )
-//   }
-// }
+  render() {
+    return (
+      <div onClick={this.onClick} id="hamburger">
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </div>
+    )
+  }
+}
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     toggleNav: () => dispatch(toggleNav()),
-//   }
-// }
+const mapDispatchToProps = dispatch => {
+  return {
+    toggleNav: () => dispatch(toggleNav()),
+  }
+}
 
-// const mapStateToProps = state => {
-//   return {
-//     isOpen: state.nav.isOpen
-//   }
-// }
+const mapStateToProps = state => {
+  return {
+    isOpen: state.nav.isOpen
+  }
+}
 
-// export default connect(mapStateToProps)(Hamburger);
+export default connect(mapStateToProps)(Hamburger);
