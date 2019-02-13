@@ -4,6 +4,7 @@ import Header from '../header/header.jsx';
 import './landing.scss';
 
 class Landing extends React.Component {
+  
 
   render() {
     return (
