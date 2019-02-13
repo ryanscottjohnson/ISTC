@@ -1,0 +1,69 @@
+.wrapper {
+	display: inline-block;
+	position: absolute;
+	top: 1rem;
+	right: 1.5rem;
+	cursor: pointer;
+	height: 2.5rem;
+	width: 3rem;
+}
+
+.show-nav {
+	display: inline-block;
+	height: 3rem;
+	padding: 2rem 0;
+	position: relative;
+	box-sizing: border-box;
+}
+.show-nav.active {
+	height: 3rem;
+}
+
+.show-nav span {
+	width: 3rem;
+	height: 0.3rem;
+	background: #fff;
+	float: left;
+	content: '';
+	transition: all ease-in-out 0.2s;
+	position: absolute;
+	-webkit-transform: rotate(-180deg);
+	-moz-transform: rotate(-180deg);
+	-o-transform: rotate(-180deg);
+	transform: rotate(-180deg);
+}
+
+.show-nav span:nth-child(2) {
+	top: 0rem;
+	bottom: 0rem;
+	margin: auto;
+}
+
+.show-nav span:first-child {
+	top: 1rem;
+}
+
+.show-nav span:last-child {
+	bottom: 1rem;
+}
+
+.show-nav.active span:first-child {
+	transform: rotate(45deg);
+	top: 0rem;
+	bottom: 0rem;
+	margin: auto;
+	background: #ffffff;
+}
+
+.show-nav.active span:last-child {
+	transform: rotate(-45deg);
+	top: 0rem;
+	bottom: 0rem;
+	margin: auto;
+	background: #ffffff;
+}
+
+.show-nav.active span:nth-child(2) {
+	transform: rotate(-45deg);
+	display: none;
+}

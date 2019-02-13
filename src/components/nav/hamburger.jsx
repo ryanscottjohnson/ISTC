@@ -1,35 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
+import './nav.scss';
 
-class Hamburger extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  onClick = () => {
-    this.props.toggleNav();
-  }
-
-  render() {
-    return (
-      <div onClick={this.onClick} id="hamburger">
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
-      </div>
-    )
-  }
+const Hamburger = props => {
+	return (
+		<div onClick={props.handleMenu} className="wrapper">
+			<div className={props.openMenu ? 'show-nav active' : 'show-nav'}>
+				<span />
+				<span />
+				<span />
+			</div>
+		</div>
+	)
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    toggleNav: () => dispatch(toggleNav()),
-  }
-}
-
-const mapStateToProps = state => {
-  return {
-    isOpen: state.nav.isOpen
-  }
-}
-
-export default connect(mapStateToProps)(Hamburger);
+export default Hamburger;
