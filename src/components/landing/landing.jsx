@@ -1,5 +1,7 @@
 import React from 'react';
 import Header from '../header/header.jsx';
+import Footer from '../footer/footer.jsx';
+// import Location from '../site-locaiton/location.jsx';
 
 import './landing.scss';
 
@@ -11,18 +13,25 @@ class Landing extends React.Component {
 
   render() {
     return (
-      <section id="landing-page">
-        <div className="greeting">
+      <div className="landing-page">
+        <Header /> 
+        <Footer />
+        {/* <Location /> */}
+        {/* <Location siteLocation={this.state.siteLocation}/> */}
+      
+      </div>
+      // <section id="landing-page">
+      //   <div className="greeting">
 
-          <p>Welcome Back!</p>
+      //     <p>Welcome Back!</p>
 
-        </div>
-        <div className="landing">
-          <p>Content</p>
-        </div>
+      //   </div>
+      //   <div className="landing">
+      //     <p>Content</p>
+      //   </div>
 
 
-      </section>
+      // </section>
  
     )
   }
