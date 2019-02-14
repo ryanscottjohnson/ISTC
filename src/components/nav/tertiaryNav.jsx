@@ -1,29 +1,29 @@
 import React from 'react';
-// import Header from '../header/header.jsx';
-// import Footer from '../footer/footer.jsx';
-// import Location from '../site-locaiton/location.jsx';
-
+import ListItems from './ListItems.jsx';
+import {getPages} from '../../helpers/navigation-helpers'
 class TertiaryNav extends React.Component {
   constructor(props) {
     super(props);
-  }
-
-  render(){
-      const {navLevel} = this.props
-    if(navLevel > 2){
-    return (
-        
-        <div>
-        3rd  Nav  component
-
-      </div>
-          )
+    this.state = {
+      categories: []
     }
-    else{
+
+  }
+  render() {
+    const filteredPages = getPages(this.props);
+    const { navLevel } = this.props;
+
+    if (navLevel >= 3) {
+      return (
+        //nav would items point to content pages in real life.
+        <ul><ListItems navItems={filteredPages} itemType="pages" handleClick={this.props.handleClick} level={4}/></ul>
+      )
+    }
+    else {
       return null
     }
 
-  }
+  };
 }
 
 export default TertiaryNav

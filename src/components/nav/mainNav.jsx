@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import SecondaryNav from './SecondaryNav.jsx';
 import TertiaryNav from './TertiaryNav.jsx';
@@ -8,20 +10,26 @@ class MainNav extends React.Component {
     super(props);
     this.state = {
       navLevel: 1,
-      navCategory: null, //integer to match main nav items to categories
-      navPages: 0, ////integer to match main nav items to categories
+      navCategory: null, // integer to match main nav items to categories
+      navPages: null, // //integer to match main nav items to categories
       navItems: [{
         id: 0,
         name: 'my schedule & biddings',
-        categories: true,
-        icon: 'fas fa-calendar-alt'
+        navigate: true,
+        icon: 'fas fa-calendar-alt',
       },
       {
         id: 1,
         name: 'saftey',
-        categories: true,
-        icon: 'fas fa-lock'
-      }
+        navigate: true,
+        icon: 'fas fa-lock',
+      },
+      {
+        id: 2,
+        name: 'ryans stuff',
+        navigate: false,
+        icon: 'fas fa-lock',
+      },
 
       ],
       categories: [
@@ -29,64 +37,71 @@ class MainNav extends React.Component {
           referenceId: 0,
           id: 0,
           name: 'my schedule',
-          pages: false
+          navigate: false,
         },
         {
           referenceId: 0,
           id: 1,
           name: 'my biddings',
-          pages: false
+          navigate: false,
         },
         {
           referenceId: 1,
           id: 2,
           name: 'reporting',
-          pages: true,
+          navigate: true,
         },
         {
           referenceId: 1,
           id: 3,
           name: 'agriculture and customs',
-          pages: true,
+          navigate: true,
         },
         {
           referenceId: 1,
           id: 4,
           name: 'known crewmember',
-          pages: false,
+          navigate: false,
         },
         {
           referenceId: 1,
           id: 5,
           name: 'product safety data search',
-          pages: false
-        }
+          navigate: false,
+        },
       ],
       pages: [
         {
+          referenceId: 3,
+          id: 0,
+          name: 'item-1',
+        },
+        {
+          referenceId: 3,
+          id: 1,
+          name: 'item-2',
+        },
+        {
           referenceId: 2,
           id: 0,
-          name: '1-21 injury reporting'
+          name: '1-21 injury reporting',
         },
         {
           referenceId: 2,
           id: 1,
-          name: 'ASAP reporting'
+          name: 'ASAP reporting',
         },
         {
           referenceId: 2,
           id: 2,
-          name: 'general ASAP information'
+          name: 'general ASAP information',
         },
         {
           referenceId: 2,
           id: 3,
-          name: 'flight attendant incident report'
-        }
+          name: 'flight attendant incident report',
+        },
       ],
-
-
-
 
 
       // navItemsTemp: [
@@ -269,30 +284,44 @@ class MainNav extends React.Component {
     };
     this.handleClick = this.handleClick.bind(this);
   }
-  handleClick(e, level, categoryId = '', pageId = '') {
-    e.preventDefault();
-    this.setState({ 
-      navLevel: level, 
-      navCategory: categoryId, 
-      navPages: pageId 
-    });
 
+
+  handleClick(e, level, id = '', name = '', closeMenu=false) {
+    
+    e.preventDefault();
+    if (level === 2) {
+      this.setState({
+        navLevel: level,
+        navCategory: id,
+      });
+    }
+    else if (level === 3) {
+      this.setState({
+        navLevel: level,
+        navPages: id,
+      });
+    }
+    if(closeMenu){
+      console.log("closeMenu", closeMenu);
+      this.props.handleMenuOpenClose(closeMenu);
+    }
+    this.props.getBreadcrumb(level, name);
   }
+
   render() {
-    const { navActive } = this.props
+    const { navActive } = this.props;
     if (navActive) {
       return (
         <div>
-          <ul><ListItems navItems={this.state.navItems} handleClick={this.handleClick} level={2} /></ul>
-          <SecondaryNav {...this.state} />
-          <TertiaryNav {...this.state} />
+          <ul>
+            <ListItems navItems={this.state.navItems} handleClick={this.handleClick} level={2} />
+          </ul>
+          <SecondaryNav {...this.state} handleClick={this.handleClick} />
+          <TertiaryNav {...this.state} handleClick={this.handleClick} />
         </div>
-      )
+      );
     }
-    else {
-      return null
-    }
-
+    return null;
   }
 }
-export default MainNav
+export default MainNav;
