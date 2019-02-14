@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../header/header.jsx';
-import Footer from '../footer/footer.jsx';
+// import Header from '../header/header.jsx';
+// import Footer from '../footer/footer.jsx';
 // import Location from '../site-locaiton/location.jsx';
 
 import './landing.scss';
@@ -10,15 +10,10 @@ class Landing extends React.Component {
     super(props);
   }
 
-
   render() {
     return (
       <div className="landing-page">
-        <Header /> 
-        <Footer />
-        {/* <Location /> */}
-        {/* <Location siteLocation={this.state.siteLocation}/> */}
-      
+        test landing page
       </div>
       // <section id="landing-page">
       //   <div className="greeting">
