@@ -19,9 +19,18 @@ class Header extends React.Component {
   handleMenuOpenClose() {
     this.setState((prevState) => ({
       navActive: !prevState.navActive,
-
     }))
   }
+
+	// handleMenuOpenClose = () => {
+	// 	this.setState({
+	// 		menuOpen: !this.state.menuOpen,
+	// 		menuOpenRight: false,
+	// 		selectedSection: { categories: [] },
+	// 		categoryIdArr: []
+	// 	})
+	// }
+
     getBreadcrumb(level, name) {
 
       switch (level){
