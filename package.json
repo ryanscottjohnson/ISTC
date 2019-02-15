@@ -4,28 +4,20 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-<<<<<<< HEAD
     "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack-dev-server --host 0.0.0.0 --inline --hot",
     "hot": "webpack-dev-server --inline --hot --history-api-fallback --open",
     "build": "webpack --mode production"
-=======
-    "test": "echo \"Error: no test specified\" && exit 1"
->>>>>>> e060bfba7389a0d9095f87075c5ada22a507658e
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ryanscottjohnson/ISTC.git"
   },
-<<<<<<< HEAD
   "author": "RyanScottJohnson",
-=======
-  "author": "",
->>>>>>> e060bfba7389a0d9095f87075c5ada22a507658e
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ryanscottjohnson/ISTC/issues"
   },
-<<<<<<< HEAD
   "homepage": "https://github.com/ryanscottjohnson/ISTC#readme",
   "dependencies": {
     "@babel/core": "^7.2.2",
@@ -36,6 +28,7 @@
     "css-loader": "^2.1.0",
     "file-loader": "^3.0.1",
     "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.11.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-router-dom": "^4.3.1",
@@ -44,8 +37,16 @@
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.1.14"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "react-router": "^4.3.1"
   }
-=======
-  "homepage": "https://github.com/ryanscottjohnson/ISTC#readme"
->>>>>>> e060bfba7389a0d9095f87075c5ada22a507658e
 }
