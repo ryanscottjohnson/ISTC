@@ -1,15 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=News+Cycle');
 @import './normalize.css';
-
-$color-primary: #01426a;
-$color-secondary: #2774ae;
-// $color-tertiary: rgb(72, 169, 197);
-// $color-highlight: rgb(179, 213, 125);
-$p-font: 'News+Cycle', sans-serif;
-$h-font: 'News+Cycle', serif;
+@import './_base';
 
 *,
 *::before,
+
 *::after {
 	margin: 0;
 	padding: 0;
@@ -18,31 +12,11 @@ $h-font: 'News+Cycle', serif;
 html,
 body {
 	position: relative;
-	// font-size: ;
-	// color: $color-primary;
+	color: $color-primary;
 	overflow: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, p {
-  font-family: $h-font;
-}
-
-@keyframes fadeInText {
-	0% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
-
-@keyframes moveInRight {
-	0% {
-		transform: translateX(10rem);
-	}
-
-	100% {
-		transform: translate(0);
-	}
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	color: $color-text;
 }

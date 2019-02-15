@@ -1,0 +1,25 @@
+$color-primary:rgb(22, 66, 103);
+$color-secondary:rgb(59, 117, 167);
+$color-tertiary: rgb(96, 168, 193);
+$color-highlight: rgb(188, 214, 129);
+$color-text: #fff;
+
+@keyframes fadeInText {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes moveInRight {
+	0% {
+		transform: translateX(10rem);
+	}
+
+	100% {
+		transform: translate(0);
+	}
+}

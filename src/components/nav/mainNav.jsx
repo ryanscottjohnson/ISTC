@@ -149,16 +149,6 @@ class MainNav extends React.Component {
       // Level 3 **************************
       pages: [
         {
-          referenceId: 0,
-          id: 0,
-          name: 'My Schedule',
-        },
-        {
-          referenceId: 1,
-          id: 1,
-          name: 'My Biddings',
-        },
-        {
           referenceId: 2,
           id: 3,
           name: '1-21 Injury Reporting',
