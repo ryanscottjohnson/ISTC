@@ -11,276 +11,194 @@ class MainNav extends React.Component {
     this.state = {
       navLevel: 1,
       navCategory: null, // integer to match main nav items to categories
-      navPages: null, // //integer to match main nav items to categories
+      navPages: null, //integer to match main nav items to categories
+
+// level 1 **************************
       navItems: [{
         id: 0,
-        name: 'my schedule & biddings',
+        name: 'My Schedule & Biddings',
         navigate: true,
         icon: 'fas fa-calendar-alt',
       },
       {
         id: 1,
-        name: 'saftey',
+        name: 'Saftey',
         navigate: true,
         icon: 'fas fa-lock',
       },
-      {
-        id: 2,
-        name: 'ryans stuff',
-        navigate: false,
-        icon: 'fas fa-lock',
+      { 
+        id: 2, 
+        name: 'Training', 
+        navigate: false, 
+        icon: 'fas fa-dumbbell' 
       },
-
+      { 
+        id: 3, 
+        name: 'Administration', 
+        navigate: true, 
+        icon: 'fas fa-user-tie' 
+      },
+      { 
+        id: 4, 
+        name: 'Catering & Brand', 
+        navigate: true, 
+        icon: 'fas fa-utensils' 
+      },
+      { 
+        id: 5, 
+        name: 'Hotels', 
+        navigate: false, 
+        icon: 'fas fa-hotel' 
+      },
+      { 
+        id: 6, 
+        name: 'My Base', 
+        navigate: false, 
+        icon: 'fas fa-home' 
+      },
+      { 
+        id: 7, 
+        name: 'Recognition', 
+        navigate: false, 
+        icon: 'fas fa-brain' 
+      },
+      { 
+        id: 8, 
+        name: 'My Leadership Team', 
+        navigate: false, 
+        icon: 'fas fa-users' 
+      },
       ],
+
+      // Level 2 **************************
       categories: [
         {
           referenceId: 0,
           id: 0,
-          name: 'my schedule',
+          name: 'My Schedule',
           navigate: false,
         },
         {
           referenceId: 0,
           id: 1,
-          name: 'my biddings',
+          name: 'My Biddings',
           navigate: false,
         },
         {
           referenceId: 1,
           id: 2,
-          name: 'reporting',
+          name: 'Reporting',
           navigate: true,
         },
         {
           referenceId: 1,
           id: 3,
-          name: 'agriculture and customs',
+          name: 'Agriculture and Customs',
           navigate: true,
         },
         {
           referenceId: 1,
           id: 4,
-          name: 'known crewmember',
+          name: 'Known Crewmember',
           navigate: false,
         },
         {
           referenceId: 1,
           id: 5,
-          name: 'product safety data search',
+          name: 'Product Safety Data Search',
+          navigate: false,
+        },
+        {
+          referenceId: 3,
+          id: 6,
+          name: 'OJI and Leave',
+          navigate: true,
+        },
+        {
+          referenceId: 3,
+          id: 7,
+          name: 'Pay & Benefits',
+          navigate: true,
+        },
+        {
+          referenceId: 3,
+          id: 8,
+          name: 'Performance',
+          navigate: false,
+        },
+        {
+          referenceId: 3,
+          id: 9,
+          name: 'Inflight Resource Directory',
+          navigate: false,
+        },
+        {
+          referenceId: 3,
+          id: 10,
+          name: 'Mobile & Web',
+          navigate: false,
+        },
+        {
+          referenceId: 3,
+          id: 11,
+          name: 'AFA',
           navigate: false,
         },
       ],
+
+      // Level 3 **************************
       pages: [
         {
-          referenceId: 3,
+          referenceId: 0,
           id: 0,
-          name: 'item-1',
+          name: 'My Schedule',
         },
         {
-          referenceId: 3,
+          referenceId: 1,
           id: 1,
-          name: 'item-2',
-        },
-        {
-          referenceId: 2,
-          id: 0,
-          name: '1-21 injury reporting',
-        },
-        {
-          referenceId: 2,
-          id: 1,
-          name: 'ASAP reporting',
-        },
-        {
-          referenceId: 2,
-          id: 2,
-          name: 'general ASAP information',
+          name: 'My Biddings',
         },
         {
           referenceId: 2,
           id: 3,
-          name: 'flight attendant incident report',
+          name: '1-21 Injury Reporting',
+        },
+        {
+          referenceId: 2,
+          id: 4,
+          name: 'ASAP Reporting',
+        },
+        {
+          referenceId: 2,
+          id: 5,
+          name: 'General ASAP Information',
+        },
+        {
+          referenceId: 2,
+          id: 6,
+          name: 'Flight Attendant Incident Report',
+        },
+        {
+          referenceId: 7,
+          id: 7,
+          name: 'OJI',
+        },
+        {
+          referenceId: 7,
+          id: 8,
+          name: 'Leave',
+        },
+        {
+          referenceId: 8,
+          id: 9,
+          name: 'Pay',
+        },
+        {
+          referenceId: 8,
+          id: 10,
+          name: 'Benefits',
         },
       ],
-
-
-      // navItemsTemp: [
-      //   { id: 2, name: 'training', categories: [], icon: 'fas fa-dumbbell' },
-      //   {
-      //     id: 3,
-      //     name: 'administration',
-      //     categories: [
-      //       {
-      //         parentId: 3,
-      //         id: 0,
-      //         name: 'OJI and leaves',
-      //         pages: [
-      //           {
-      //             grandparentId: 3,
-      //             parentId: 0,
-      //             id: 0,
-      //             name: '1-21 injury reporting'
-      //           },
-      //           {
-      //             grandparentId: 3,
-      //             parentId: 0,
-      //             id: 1,
-      //             name: 'ASAP reporting'
-      //           },
-      //           {
-      //             grandparentId: 3,
-      //             parentId: 0,
-      //             id: 2,
-      //             name: 'general ASAP information'
-      //           },
-      //           {
-      //             grandparentId: 3,
-      //             parentId: 0,
-      //             id: 3,
-      //             name: 'flight attendant incident report'
-      //           }
-      //         ]
-      //       },
-      //       {
-      //         parentId: 3,
-      //         id: 1,
-      //         name: 'Pay and Benefits',
-      //         pages: [
-      //           {
-      //             grandparentId: 3,
-      //             parentId: 1,
-      //             id: 0,
-      //             name: 'pay'
-      //           },
-      //           {
-      //             grandparentId: 3,
-      //             parentId: 1,
-      //             id: 1,
-      //             name: 'benefits'
-      //           }
-      //         ]
-      //       },
-      //       {
-      //         parentId: 3,
-      //         id: 2,
-      //         name: 'preformance',
-      //         pages: [
-      //           {
-      //             grandparentId: 3,
-      //             parentId: 2,
-      //             id: 0,
-      //             name: 'good'
-      //           },
-      //           {
-      //             grandparentId: 3,
-      //             parentId: 2,
-      //             id: 1,
-      //             name: 'bad'
-      //           }
-      //         ]
-      //       },
-      //       {
-      //         parentId: 3,
-      //         id: 3,
-      //         name: 'inflight resource directory',
-      //         pages: []
-      //       },
-      //       {
-      //         parentId: 3,
-      //         id: 4,
-      //         name: 'mobile & web',
-      //         pages: [
-      //           {
-      //             grandparentId: 3,
-      //             parentId: 4,
-      //             id: 0,
-      //             name: 'mobile'
-      //           },
-      //           {
-      //             grandparentId: 3,
-      //             parentId: 4,
-      //             id: 1,
-      //             name: 'web'
-      //           }
-      //         ]
-      //       },
-      //       {
-      //         parentId: 3,
-      //         id: 5,
-      //         name: 'AFA',
-      //         pages: []
-      //       }
-      //     ],
-      //     icon: 'fas fa-user-tie'
-      //   },
-      //   {
-      //     id: 4,
-      //     name: 'catering & brand',
-      //     categories: [
-      //       {
-      //         parentId: 4,
-      //         id: 0,
-      //         name: 'catering',
-      //         pages: [
-      //           {
-      //             grandparentId: 4,
-      //             parentId: 0,
-      //             id: 0,
-      //             name: 'food'
-      //           },
-      //           {
-      //             grandparentId: 4,
-      //             parentId: 0,
-      //             id: 1,
-      //             name: 'drink'
-      //           },
-      //           {
-      //             grandparentId: 4,
-      //             parentId: 0,
-      //             id: 2,
-      //             name: 'alcohol'
-      //           }
-      //         ]
-      //       },
-      //       {
-      //         parentId: 4,
-      //         id: 1,
-      //         name: 'brand',
-      //         pages: [
-      //           {
-      //             grandparentId: 4,
-      //             parentId: 1,
-      //             id: 0,
-      //             name: 'company colors'
-      //           },
-      //           {
-      //             grandparentId: 4,
-      //             parentId: 1,
-      //             id: 1,
-      //             name: 'uniforms'
-      //           },
-      //           {
-      //             grandparentId: 4,
-      //             parentId: 1,
-      //             id: 2,
-      //             name: 'vision'
-      //           }
-      //         ]
-      //       }
-      //     ],
-      //     icon: 'fas fa-utensils'
-      //   },
-      //   { id: 5, name: 'hotels', categories: [], icon: 'fas fa-hotel' },
-      //   { id: 6, name: 'my base', categories: [], icon: 'fas fa-home' },
-      //   { id: 7, name: 'recognition', categories: [], icon: 'fas fa-brain' },
-      //   {
-      //     id: 8,
-      //     name: 'my leadership team',
-      //     categories: [],
-      //     icon: 'fas fa-users'
-      //   }
-
-      // ]
     };
     this.handleClick = this.handleClick.bind(this);
   }
