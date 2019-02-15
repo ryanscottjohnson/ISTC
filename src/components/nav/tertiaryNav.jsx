@@ -16,7 +16,7 @@ class TertiaryNav extends React.Component {
     if (navLevel >= 3) {
       return (
         //nav would items point to content pages in real life.
-        <ul><ListItems navItems={filteredPages} itemType="pages" handleClick={this.props.handleClick} level={4} /></ul>
+        false
       )
     } else {
       return null

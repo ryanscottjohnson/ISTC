@@ -2,7 +2,6 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import SecondaryNav from './SecondaryNav.jsx';
-import TertiaryNav from './TertiaryNav.jsx';
 import ListItems from './ListItems.jsx';
 
 class MainNav extends React.Component {
@@ -218,20 +217,16 @@ class MainNav extends React.Component {
 
   render() {
     const { navActive } = this.props;
-    if (navActive) {
-      return (
-        <div style={{ height: window.innerHeight }} className="main_nav">
-          <div>
-            <ul>
-              <ListItems navItems={this.state.navItems} handleClick={this.handleClick} level={2} />
-            </ul>
-            <SecondaryNav {...this.state} handleClick={this.handleClick} />
-            <TertiaryNav {...this.state} handleClick={this.handleClick} />
-          </div>
+    return (
+      <div style={{ height: window.innerHeight }} className="nav-container">
+        <div className={`main-nav ${navActive ? "active" : "inactive"}`}>
+          <ul>
+            <ListItems {...this.state} navItems={this.state.navItems} handleClick={this.handleClick} level={2} />
+          </ul>
+          <SecondaryNav {...this.state} handleClick={this.handleClick} />
         </div>
-      );
-    }
-    return null;
+      </div>
+    );
   }
 }
 

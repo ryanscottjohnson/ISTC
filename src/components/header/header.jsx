@@ -65,9 +65,10 @@ class Header extends React.Component {
               handleMenuOpenClose={this.handleMenuOpenClose}
             />
           </div>
+          <BreadCrumb {...this.state} />
           <MainNav {...this.state} getBreadcrumb={this.getBreadcrumb} handleMenuOpenClose={this.handleMenuOpenClose}
  />
-          <BreadCrumb {...this.state} />
+
         </React.Fragment>
       )
     }

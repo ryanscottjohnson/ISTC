@@ -1,7 +1,51 @@
 @import '../../style/_base.scss';
 
-.main_nav {
+.main-nav {
 	background-color: $color-secondary;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: -100%;
+	transition: all 400ms ease-in;
+	color: #FFF;
+	font-size: 1.1em;
+	overflow: scroll;
+	&.active {
+		left: 0
+	}
+	
+
+	.secondary-nav {
+		height: 100%;
+		width: calc(100% - 30px);
+		right: 100%;
+		position: absolute;
+		top: 0;
+		background-color: $color-secondary;
+		transition: all 400ms ease-in;
+		&.active {
+			right: 0;
+		}
+		li{
+			text-transform: capitalize;
+			
+		}
+	}
+	li{
+		padding-top: 15px;
+		padding-bottom: 15px;
+		padding-right: 15px;
+		padding-left: 15px;
+		border-bottom: 1px solid #FFF;
+		border-left: 1px solid #FFF;
+		border-right: 1px solid #FFF;
+		text-transform: uppercase;
+		display: block;
+		i.arrow{
+			float:right;
+		}
+	}
+
 }
 
 .wrapper {
@@ -21,6 +65,7 @@
 	position: relative;
 	box-sizing: border-box;
 }
+
 .show-nav.active {
 	height: 3rem;
 }
@@ -73,4 +118,3 @@
 	transform: rotate(-45deg);
 	display: none;
 }
-

@@ -13,7 +13,7 @@ class BreadCrumb extends React.Component {
   }
   render(){
     return (
-      <div>{this.renderBreadCrumb()}</div>
+      <div className="breadcrumb">{this.renderBreadCrumb()}</div>
     )
   }
 }

@@ -13,14 +13,13 @@ class SecondaryNav extends React.Component {
     const filteredCategories = getCategories(this.props);
     const { navLevel } = this.props;
 
-    if (navLevel >= 2) {
-
       return (
-        <ul><ListItems navItems={filteredCategories} handleClick={this.props.handleClick} level={3} /></ul>
+        <div className={`secondary-nav ${navLevel>=2?"active":"inactive"}` } >
+        <ul>
+          <ListItems {...this.props} navItems={filteredCategories} handleClick={this.props.handleClick} level={3} />
+          </ul>
+        </div>
       )
-    } else {
-      return null
-    }
 
   };
 }
