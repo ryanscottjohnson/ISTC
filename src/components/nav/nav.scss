@@ -1,3 +1,9 @@
+@import '../../style/_base.scss';
+
+.main_nav {
+	background-color: $color-primary;
+}
+
 .wrapper {
 	display: inline-block;
 	position: absolute;
@@ -67,3 +73,4 @@
 	transform: rotate(-45deg);
 	display: none;
 }
+

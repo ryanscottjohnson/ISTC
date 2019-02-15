@@ -13,7 +13,7 @@ class MainNav extends React.Component {
       navCategory: null, // integer to match main nav items to categories
       navPages: null, //integer to match main nav items to categories
 
-// level 1 **************************
+      // level 1 **************************
       navItems: [{
         id: 0,
         name: 'My Schedule & Biddings',
@@ -26,47 +26,47 @@ class MainNav extends React.Component {
         navigate: true,
         icon: 'fas fa-lock',
       },
-      { 
-        id: 2, 
-        name: 'Training', 
-        navigate: false, 
-        icon: 'fas fa-dumbbell' 
+      {
+        id: 2,
+        name: 'Training',
+        navigate: false,
+        icon: 'fas fa-dumbbell'
       },
-      { 
-        id: 3, 
-        name: 'Administration', 
-        navigate: true, 
-        icon: 'fas fa-user-tie' 
+      {
+        id: 3,
+        name: 'Administration',
+        navigate: true,
+        icon: 'fas fa-user-tie'
       },
-      { 
-        id: 4, 
-        name: 'Catering & Brand', 
-        navigate: true, 
-        icon: 'fas fa-utensils' 
+      {
+        id: 4,
+        name: 'Catering & Brand',
+        navigate: true,
+        icon: 'fas fa-utensils'
       },
-      { 
-        id: 5, 
-        name: 'Hotels', 
-        navigate: false, 
-        icon: 'fas fa-hotel' 
+      {
+        id: 5,
+        name: 'Hotels',
+        navigate: false,
+        icon: 'fas fa-hotel'
       },
-      { 
-        id: 6, 
-        name: 'My Base', 
-        navigate: false, 
-        icon: 'fas fa-home' 
+      {
+        id: 6,
+        name: 'My Base',
+        navigate: false,
+        icon: 'fas fa-home'
       },
-      { 
-        id: 7, 
-        name: 'Recognition', 
-        navigate: false, 
-        icon: 'fas fa-brain' 
+      {
+        id: 7,
+        name: 'Recognition',
+        navigate: false,
+        icon: 'fas fa-brain'
       },
-      { 
-        id: 8, 
-        name: 'My Leadership Team', 
-        navigate: false, 
-        icon: 'fas fa-users' 
+      {
+        id: 8,
+        name: 'My Leadership Team',
+        navigate: false,
+        icon: 'fas fa-users'
       },
       ],
 
@@ -194,8 +194,8 @@ class MainNav extends React.Component {
   }
 
 
-  handleClick(e, level, id = '', name = '', closeMenu=false) {
-    
+  handleClick(e, level, id = '', name = '', closeMenu = false) {
+
     e.preventDefault();
     if (level === 2) {
       this.setState({
@@ -209,7 +209,7 @@ class MainNav extends React.Component {
         navPages: id,
       });
     }
-    if(closeMenu){
+    if (closeMenu) {
       console.log("closeMenu", closeMenu);
       this.props.handleMenuOpenClose(closeMenu);
     }
@@ -220,16 +220,20 @@ class MainNav extends React.Component {
     const { navActive } = this.props;
     if (navActive) {
       return (
-        <div>
-          <ul>
-            <ListItems navItems={this.state.navItems} handleClick={this.handleClick} level={2} />
-          </ul>
-          <SecondaryNav {...this.state} handleClick={this.handleClick} />
-          <TertiaryNav {...this.state} handleClick={this.handleClick} />
+        <div style={{ height: window.innerHeight }} className="main_nav">
+          <div>
+            <ul>
+              <ListItems navItems={this.state.navItems} handleClick={this.handleClick} level={2} />
+            </ul>
+            <SecondaryNav {...this.state} handleClick={this.handleClick} />
+            <TertiaryNav {...this.state} handleClick={this.handleClick} />
+          </div>
         </div>
       );
     }
     return null;
   }
 }
+
+
 export default MainNav;
