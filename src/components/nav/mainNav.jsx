@@ -93,7 +93,7 @@ class MainNav extends React.Component {
           referenceId: 1,
           id: 3,
           name: 'Agriculture and Customs',
-          navigate: true,
+          navigate: false,
         },
         {
           referenceId: 1,
@@ -168,22 +168,22 @@ class MainNav extends React.Component {
           name: 'Flight Attendant Incident Report',
         },
         {
-          referenceId: 7,
+          referenceId: 6,
           id: 7,
           name: 'OJI',
         },
         {
-          referenceId: 7,
+          referenceId: 6,
           id: 8,
           name: 'Leave',
         },
         {
-          referenceId: 8,
+          referenceId: 7,
           id: 9,
           name: 'Pay',
         },
         {
-          referenceId: 8,
+          referenceId: 7,
           id: 10,
           name: 'Benefits',
         },
@@ -221,7 +221,7 @@ class MainNav extends React.Component {
       <div style={{ height: window.innerHeight }} className="nav-container">
         <div className={`main-nav ${navActive ? "active" : "inactive"}`}>
           <ul>
-            <ListItems {...this.state} navItems={this.state.navItems} handleClick={this.handleClick} level={2} />
+            <ListItems navItems={this.state.navItems} handleClick={this.handleClick} level={2} />
           </ul>
           <SecondaryNav {...this.state} handleClick={this.handleClick} />
         </div>

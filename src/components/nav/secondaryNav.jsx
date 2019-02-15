@@ -1,5 +1,7 @@
 import React from 'react';
 import ListItems from './ListItems.jsx';
+import TertiaryNav from './TertiaryNav.jsx';
+
 import { getCategories } from '../../helpers/navigation-helpers'
 class SecondaryNav extends React.Component {
   constructor(props) {
@@ -16,8 +18,9 @@ class SecondaryNav extends React.Component {
       return (
         <div className={`secondary-nav ${navLevel>=2?"active":"inactive"}` } >
         <ul>
-          <ListItems {...this.props} navItems={filteredCategories} handleClick={this.props.handleClick} level={3} />
-          </ul>
+          <ListItems  navItems={filteredCategories} handleClick={this.props.handleClick} level={3} />
+          {/* <TertiaryNav {...this.props} handleClick={this.handleClick} /> */}
+        </ul>
         </div>
       )
 
