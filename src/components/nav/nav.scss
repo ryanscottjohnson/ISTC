@@ -1,3 +1,109 @@
+@import '../../style/_base.scss';
+
+.main-nav {
+	background-color: $color-secondary;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: -100%;
+	transition: all 400ms ease-in;
+	color: #FFF;
+	font-size: 1.1em;
+	overflow: scroll;
+	&.active {
+		left: 0
+	}
+	
+	.secondary-nav {
+		height: 100%;
+		width: calc(100% - 30px);
+		right: 100%;
+		position: absolute;
+		top: 0;
+		background-color: $color-secondary;
+		transition: all 400ms ease-in;
+		&.active {
+			right: 0;
+		}
+		li{
+			text-transform: capitalize;
+			
+		}
+	}
+	li{
+		padding-top: 15px;
+		padding-bottom: 15px;
+		padding-right: 15px;
+		padding-left: 15px;
+		border-bottom: 1px solid #FFF;
+		border-left: 1px solid #FFF;
+		border-right: 1px solid #FFF;
+		text-transform: uppercase;
+		display: block;
+		i.arrow{
+			float:right;
+		}
+	}
+
+}
+
+// hamburger menu
+@import "compass/css3";
+
+body {
+  background: darken(#34c4e8, 10%);
+  padding: 60px;
+}
+h1  {
+  color: lighten(#34c4e8, 30%);
+  font-family: 'Source Code Pro', sans-serif;
+  font-weight: 200;
+  margin: 0 0 40px;
+  text-align: center;
+}
+.menu {
+  cursor: pointer;
+  margin: 0 auto;
+  padding-left: 1.25em;
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+.menu-global {
+  backface-visibility: hidden;
+  position: absolute;
+  left: 0;
+  border-top: 7px solid white;
+  width: 100%;
+  transition: 0.55s;
+}
+.menu-top {
+  top: 0;
+}
+.menu-middle {
+  top: 18px;
+}
+.menu-bottom {
+  top: 36px;
+}
+.menu-top-click {
+  backface-visibility: hidden;
+  top: 15px;
+  transform: rotate(50deg);
+  transition: 0.55s 0.5s;
+}
+.menu-middle-click {
+  opacity: 0;
+}
+.menu-bottom-click {
+  backface-visibility: hidden;
+  top: 15px;
+  transform: rotate(-410deg);
+  transition: 0.55s 0.5s;
+}
+
+// ******************************
+
 .wrapper {
 	display: inline-block;
 	position: absolute;
@@ -15,6 +121,7 @@
 	position: relative;
 	box-sizing: border-box;
 }
+
 .show-nav.active {
 	height: 3rem;
 }
@@ -22,7 +129,7 @@
 .show-nav span {
 	width: 3rem;
 	height: 0.3rem;
-	background: #000;
+	background: #fff;
 	float: left;
 	content: '';
 	transition: all ease-in-out 0.2s;
@@ -47,23 +154,23 @@
 	bottom: 1rem;
 }
 
-.show-nav.active span:first-child {
-	transform: rotate(45deg);
-	top: 0rem;
-	bottom: 0rem;
-	margin: auto;
-	background: #ffffff;
-}
+// .show-nav.active span:first-child {
+// 	transform: rotate(45deg);
+// 	top: 0rem;
+// 	bottom: 0rem;
+// 	margin: auto;
+// 	background: #fff;
+// }
 
-.show-nav.active span:last-child {
-	transform: rotate(-45deg);
-	top: 0rem;
-	bottom: 0rem;
-	margin: auto;
-	background: #ffffff;
-}
+// .show-nav.active span:last-child {
+// 	transform: rotate(-45deg);
+// 	top: 0rem;
+// 	bottom: 0rem;
+// 	margin: auto;
+// 	background: #fff;
+// }
 
-.show-nav.active span:nth-child(2) {
-	transform: rotate(-45deg);
-	display: none;
-}
+// .show-nav.active span:nth-child(2) {
+// 	transform: rotate(-45deg);
+// 	display: none;
+// }

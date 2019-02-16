@@ -1,0 +1,26 @@
+// $color-primary:#144365;
+$color-primary: #01426a;
+$color-secondary:#2774ae;
+$color-tertiary: #6EA5BC;
+$color-highlight: #BBCF93;
+$color-text: #fff;
+
+@keyframes fadeInText {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes moveInRight {
+	0% {
+		transform: translateX(10rem);
+	}
+
+	100% {
+		transform: translate(0);
+	}
+}
