@@ -92,7 +92,7 @@ class MainNav extends React.Component {
         {
           referenceId: 1,
           id: 3,
-          name: 'Agriculture and Customs',
+          name: 'Agriculture & Customs',
           navigate: false,
         },
         {
@@ -110,7 +110,7 @@ class MainNav extends React.Component {
         {
           referenceId: 3,
           id: 6,
-          name: 'OJI and Leave',
+          name: 'OJI & Leave',
           navigate: true,
         },
         {
