@@ -10,7 +10,7 @@ class BreadCrumb extends React.Component {
 
   renderBreadCrumb() {
     const { level1, level2, level3 } = this.props;
-    const breadcrumber = `${level1 != null ? level1 : 'Site Landing Page'} ${level2 != null ? ' > ' + level2 : ''} ${
+    const breadcrumber = `${level1 != null ? level1 : 'Section > Page Title'} ${level2 != null ? ' > ' + level2 : ''} ${
       level3 != null ? ' > ' + level3 : ''
     }`;
     return breadcrumber;

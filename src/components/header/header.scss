@@ -12,7 +12,6 @@
   z-index: 2;
   &__logo {
     background-image: url(../../../assets/Alaska_Logo_White.png);
-    //background-image: url(../../../assets/Alaska_Banner.png);
     margin-left: -7rem;
     background-repeat: no-repeat;
     background-size: contain;
@@ -23,13 +22,6 @@
 }
 .breadcrumb{
   position:absolute;
+  background-color: $color-secondary;
+  width: 100%;
 }
-
-// display: inline-block;
-// margin-left: 3rem;
-// background-image: url(7d90f18….png);
-// background-repeat: no-repeat;
-// background-size: contain;
-// background-position: center center;
-// height: 6rem;
-// width: 15rem;
