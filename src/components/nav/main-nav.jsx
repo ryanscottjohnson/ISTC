@@ -1,6 +1,6 @@
 
 import React from "react";
-import ListNavItems from "./ListNavItems.jsx";
+import ListNavItems from "./list-nav-items.jsx";
 
 class MainNav extends React.Component {
   constructor(props) {

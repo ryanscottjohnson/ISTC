@@ -1,6 +1,6 @@
 import React from "react";
-import SecondaryNav from './SecondaryNav.jsx';
-import TertiaryNav from "./TertiaryNav.jsx";
+import SecondaryNav from './secondary-nav.jsx';
+import TertiaryNav from "./tertiary-nav.jsx";
 import { getCategories } from "../../helpers/navigation-helpers";
 
 

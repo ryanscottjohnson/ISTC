@@ -1,8 +1,6 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from "react";
-import TertiaryNav from "./TertiaryNav.jsx";
-import { getPages } from '../../helpers/navigation-helpers'
+import TertiaryNav from "./tertiary-nav.jsx";
+import { getPages } from '../../helpers/navigation-helpers';
 
 class ListNavCategories extends React.Component {
   constructor(props) {

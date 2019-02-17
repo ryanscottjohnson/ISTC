@@ -1,7 +1,7 @@
 import React from 'react';
-import Hamburger from '../nav/Hamburger.jsx';
-import MainNav from '../nav/MainNav.jsx';
-import BreadCrumb from './BreadCrumb.jsx';
+import Hamburger from '../nav/hamburger.jsx';
+import MainNav from '../nav/main-nav.jsx';
+import BreadCrumb from './bread-crumb.jsx';
 import './header.scss';
 
 class Header extends React.Component {
@@ -22,15 +22,6 @@ class Header extends React.Component {
       navActive: !prevState.navActive,
     }));
   }
-
-  // handleMenuOpenClose = () => {
-  // 	this.setState({
-  // 		menuOpen: !this.state.menuOpen,
-  // 		menuOpenRight: false,
-  // 		selectedSection: { categories: [] },
-  // 		categoryIdArr: []
-  // 	})
-  // }
 
   getBreadcrumb(level, name) {
     switch (level) {

@@ -5,10 +5,6 @@ class ListNavPages extends React.Component {
     super(props);
   }
 
-  // componentDidMount(){
-  //   renderListItems(this.props);
-  // }
-
   renderPageListItems(props) {
     console.log("props from page list items:", props);
     return props.pages.map((item, index) => {
@@ -19,9 +15,9 @@ class ListNavPages extends React.Component {
       );
     });
   }
-
   render() {
     return <React.Fragment>{this.renderPageListItems(this.props)}</React.Fragment>;
   }
 }
+
 export default ListNavPages;

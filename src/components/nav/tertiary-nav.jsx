@@ -1,7 +1,7 @@
 import React from "react";
-import ListItems from "./ListNavItems.jsx";
+import ListItems from "./list-nav-items.jsx";
 import { getPages } from "../../helpers/navigation-helpers";
-import ListNavPages from "./ListNavPages.jsx";
+import ListNavPages from "./list-nav-pages.jsx";
 class TertiaryNav extends React.Component {
   constructor(props) {
     super(props);
@@ -15,7 +15,7 @@ class TertiaryNav extends React.Component {
       const filteredPages = getPages(this.props);
       console.log("props from tertiary:", filteredPages);
       return (
-        //nav would items point to content pages in real life.
+        //nav items would point to content pages in real life.
         <div className={`tertiary-nav ${navLevel === 3 && navPageId == id ? "active" : "inactive"}`}>
           <ul>
           <ListNavPages {...this.props}  />

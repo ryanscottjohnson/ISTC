@@ -1,7 +1,4 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
-
-// import './breadcrumb.scss';
 
 class BreadCrumb extends React.Component {
   constructor(props) {
