@@ -9,17 +9,11 @@ class Landing extends React.Component {
 
   render() {
     return (
-      // <div className="landing-page">
-      //   test landing page
-      // </div>
       <section id="landing-page">
         <div className="greeting">
-
           <p>Welcome Back!</p>
-
         </div>
       </section>
-
     )
   }
 }

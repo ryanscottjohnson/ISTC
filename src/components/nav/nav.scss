@@ -1,50 +1,68 @@
-@import '../../style/_base.scss';
+
+@import "../../style/_base.scss";
 
 .main-nav {
-	background-color: $color-secondary;
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	left: -100%;
-	transition: all 400ms ease-in;
-	color: #FFF;
-	font-size: 1.1em;
-	overflow: scroll;
-	&.active {
-		left: 0
-	}
-	
-	.secondary-nav {
-		height: 100%;
-		width: calc(100% - 30px);
-		right: 100%;
-		position: absolute;
-		top: 0;
-		background-color: $color-secondary;
-		transition: all 400ms ease-in;
-		&.active {
-			right: 0;
-		}
-		li{
-			text-transform: capitalize;
-			
-		}
-	}
-	li{
-		padding-top: 15px;
-		padding-bottom: 15px;
-		padding-right: 15px;
-		padding-left: 15px;
-		border-bottom: 1px solid #FFF;
-		border-left: 1px solid #FFF;
-		border-right: 1px solid #FFF;
-		text-transform: uppercase;
-		display: block;
-		i.arrow{
-			float:right;
-		}
-	}
+  background-color: $color-secondary;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: -100%;
+  transition: all 400ms ease-in;
+  color: $color-text;
+  font-size: 1.1em;
+  overflow: scroll;
+  &.active {
+    left: 0;
+  }
 
+  > ul > li.primary-nav {
+    &.selected {
+      background: $color-text;
+      color: $color-secondary;
+    }
+  }
+
+  .secondary-nav {
+    height: 100%;
+    width: calc(100% - 45px);
+    right: 100%;
+    position: absolute;
+    top: 0;
+    background-color: $color-secondary;
+		transition: all 400ms ease-in;
+		border-left: 1px solid $color-text;
+    &.active {
+      right: 0;
+    }
+    li {
+      text-transform: capitalize;
+      grid-template-columns: 1fr 20px;
+    }
+  }
+  .tertiary-nav {
+    max-height: 0;
+    transition: all 400ms ease-in;
+    display: block;
+    &.active {
+      height: 100%;
+      max-height: 1000px;
+    }
+  }
+  li {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-bottom: 1px solid $color-text;
+    text-transform: uppercase;
+    display: grid;
+    overflow: hidden;
+		grid-template-columns: 30px 1fr 20px;
+		color: $color-text;
+    i.arrow {
+      float: right;
+    }
+  }
 }
 
 // hamburger menu
@@ -105,72 +123,73 @@ h1  {
 // ******************************
 
 .wrapper {
-	display: inline-block;
-	position: absolute;
-	top: 1rem;
-	right: 1.5rem;
-	cursor: pointer;
-	height: 2.5rem;
-	width: 3rem;
+  display: inline-block;
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  cursor: pointer;
+  height: 2.5rem;
+  width: 3rem;
 }
 
 .show-nav {
-	display: inline-block;
-	height: 3rem;
-	padding: 2rem 0;
-	position: relative;
-	box-sizing: border-box;
+  display: inline-block;
+  height: 3rem;
+  padding: 2rem 0;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .show-nav.active {
-	height: 3rem;
+  height: 3rem;
 }
 
 .show-nav span {
-	width: 3rem;
-	height: 0.3rem;
-	background: #fff;
-	float: left;
-	content: '';
-	transition: all ease-in-out 0.2s;
-	position: absolute;
-	-webkit-transform: rotate(-180deg);
-	-moz-transform: rotate(-180deg);
-	-o-transform: rotate(-180deg);
-	transform: rotate(-180deg);
+  width: 3rem;
+  height: 0.3rem;
+  background: $color-text;
+  float: left;
+  content: "";
+  transition: all ease-in-out 0.2s;
+  position: absolute;
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  transform: rotate(-180deg);
 }
 
 .show-nav span:nth-child(2) {
-	top: 0rem;
-	bottom: 0rem;
-	margin: auto;
+  top: 0rem;
+  bottom: 0rem;
+  margin: auto;
 }
 
 .show-nav span:first-child {
-	top: 1rem;
+  top: 1rem;
 }
 
 .show-nav span:last-child {
-	bottom: 1rem;
+  bottom: 1rem;
 }
 
+
 // .show-nav.active span:first-child {
-// 	transform: rotate(45deg);
-// 	top: 0rem;
-// 	bottom: 0rem;
-// 	margin: auto;
-// 	background: #fff;
+//   transform: rotate(45deg);
+//   top: 0rem;
+//   bottom: 0rem;
+//   margin: auto;
+//   background: $color-text;
 // }
 
 // .show-nav.active span:last-child {
-// 	transform: rotate(-45deg);
-// 	top: 0rem;
-// 	bottom: 0rem;
-// 	margin: auto;
-// 	background: #fff;
+//   transform: rotate(-45deg);
+//   top: 0rem;
+//   bottom: 0rem;
+//   margin: auto;
+//   background: $color-text;
 // }
 
 // .show-nav.active span:nth-child(2) {
-// 	transform: rotate(-45deg);
-// 	display: none;
+//   transform: rotate(-45deg);
+//   display: none;
 // }

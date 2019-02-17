@@ -1,6 +1,6 @@
-export const getCategories = (props) => {
+export const getCategories = (props, categoryId) => {
   const filteredCategories = props.categories.filter((x)=>{
-    if (x.referenceId == props.navCategory) {
+    if (x.referenceId == categoryId) {
       return x;
     } else {
       return false;
@@ -9,13 +9,12 @@ export const getCategories = (props) => {
   .map((item, index) => {
     return item ;
   });
-  console.log("filteredCategories: ",filteredCategories);
   return filteredCategories;
 }
 
-export const getPages = (props) => {
+export const getPages = (props, pageId) => {
   const filteredPages = props.pages.filter((x)=>{
-    if (x.referenceId == props.navPages) {
+    if (x.referenceId == pageId) {
       return x;
     }
     else{
@@ -26,6 +25,5 @@ export const getPages = (props) => {
     return item ;
   }
   );
-  console.log("filteredCategories: ",filteredPages);
   return filteredPages;
 }
