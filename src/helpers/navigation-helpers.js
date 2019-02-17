@@ -1,6 +1,7 @@
-export const getCategories = (props) => {
+export const getCategories = (props, categoryId) => {
+  // console.log("categoryId: ", categoryId);
   const filteredCategories = props.categories.filter((x)=>{
-    if (x.referenceId == props.navCategory) {
+    if (x.referenceId == categoryId) {
       return x;
     } else {
       return false;
@@ -9,13 +10,16 @@ export const getCategories = (props) => {
   .map((item, index) => {
     return item ;
   });
-  console.log("filteredCategories: ",filteredCategories);
+  // console.log("filteredCategories: ",filteredCategories);
   return filteredCategories;
 }
 
-export const getPages = (props) => {
+export const getPages = (props, pageId) => {
+  // console.log("pageId: ", pageId);
   const filteredPages = props.pages.filter((x)=>{
-    if (x.referenceId == props.navPages) {
+    // console.log("referenceId: ", x.referenceId);
+    if (x.referenceId == pageId) {
+      // console.log("x: ", x);
       return x;
     }
     else{
@@ -26,6 +30,6 @@ export const getPages = (props) => {
     return item ;
   }
   );
-  console.log("filteredCategories: ",filteredPages);
+  // console.log("filteredPages: ",filteredPages);
   return filteredPages;
 }

@@ -1,72 +1,73 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
-import React from 'react';
-import SecondaryNav from './SecondaryNav.jsx';
-import ListItems from './ListItems.jsx';
+import React from "react";
+import ListNavItems from "./ListNavItems.jsx";
 
 class MainNav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       navLevel: 1,
-      navCategory: null, // integer to match main nav items to categories
-      navPages: null, //integer to match main nav items to categories
+      navCategoryId: null, // integer to match main nav items to categories
+      navPageId: null, // integer to match main nav items to categories
+      navItemId: null,
 
       // level 1 **************************
-      navItems: [{
-        id: 0,
-        name: 'My Schedule & Biddings',
-        navigate: true,
-        icon: 'fas fa-calendar-alt',
-      },
-      {
-        id: 1,
-        name: 'Saftey',
-        navigate: true,
-        icon: 'fas fa-lock',
-      },
-      {
-        id: 2,
-        name: 'Training',
-        navigate: false,
-        icon: 'fas fa-dumbbell'
-      },
-      {
-        id: 3,
-        name: 'Administration',
-        navigate: true,
-        icon: 'fas fa-user-tie'
-      },
-      {
-        id: 4,
-        name: 'Catering & Brand',
-        navigate: true,
-        icon: 'fas fa-utensils'
-      },
-      {
-        id: 5,
-        name: 'Hotels',
-        navigate: false,
-        icon: 'fas fa-hotel'
-      },
-      {
-        id: 6,
-        name: 'My Base',
-        navigate: false,
-        icon: 'fas fa-home'
-      },
-      {
-        id: 7,
-        name: 'Recognition',
-        navigate: false,
-        icon: 'fas fa-brain'
-      },
-      {
-        id: 8,
-        name: 'My Leadership Team',
-        navigate: false,
-        icon: 'fas fa-users'
-      },
+      navItems: [
+        {
+          id: 0,
+          name: "My Schedule & Biddings",
+          navigate: true,
+          icon: "fas fa-calendar-alt",
+        },
+        {
+          id: 1,
+          name: "Saftey",
+          navigate: true,
+          icon: "fas fa-lock",
+        },
+        {
+          id: 2,
+          name: "Training",
+          navigate: false,
+          icon: "fas fa-dumbbell",
+        },
+        {
+          id: 3,
+          name: "Administration",
+          navigate: true,
+          icon: "fas fa-user-tie",
+        },
+        {
+          id: 4,
+          name: "Catering & Brand",
+          navigate: true,
+          icon: "fas fa-utensils",
+        },
+        {
+          id: 5,
+          name: "Hotels",
+          navigate: false,
+          icon: "fas fa-hotel",
+        },
+        {
+          id: 6,
+          name: "My Base",
+          navigate: false,
+          icon: "fas fa-home",
+        },
+        {
+          id: 7,
+          name: "Recognition",
+          navigate: false,
+          icon: "fas fa-brain",
+        },
+        {
+          id: 8,
+          name: "My Leadership Team",
+          navigate: false,
+          icon: "fas fa-users",
+        },
       ],
 
       // Level 2 **************************
@@ -74,73 +75,73 @@ class MainNav extends React.Component {
         {
           referenceId: 0,
           id: 0,
-          name: 'My Schedule',
+          name: "My Schedule",
           navigate: false,
         },
         {
           referenceId: 0,
           id: 1,
-          name: 'My Biddings',
+          name: "My Biddings",
           navigate: false,
         },
         {
           referenceId: 1,
           id: 2,
-          name: 'Reporting',
+          name: "Reporting",
           navigate: true,
         },
         {
           referenceId: 1,
           id: 3,
-          name: 'Agriculture & Customs',
+          name: "Agriculture and Customs",
           navigate: false,
         },
         {
           referenceId: 1,
           id: 4,
-          name: 'Known Crewmember',
+          name: "Known Crewmember",
           navigate: false,
         },
         {
           referenceId: 1,
           id: 5,
-          name: 'Product Safety Data Search',
+          name: "Product Safety Data Search",
           navigate: false,
         },
         {
           referenceId: 3,
           id: 6,
-          name: 'OJI & Leave',
+          name: "OJI and Leave",
           navigate: true,
         },
         {
           referenceId: 3,
           id: 7,
-          name: 'Pay & Benefits',
+          name: "Pay & Benefits",
           navigate: true,
         },
         {
           referenceId: 3,
           id: 8,
-          name: 'Performance',
+          name: "Performance",
           navigate: false,
         },
         {
           referenceId: 3,
           id: 9,
-          name: 'Inflight Resource Directory',
+          name: "Inflight Resource Directory",
           navigate: false,
         },
         {
           referenceId: 3,
           id: 10,
-          name: 'Mobile & Web',
+          name: "Mobile & Web",
           navigate: false,
         },
         {
           referenceId: 3,
           id: 11,
-          name: 'AFA',
+          name: "AFA",
           navigate: false,
         },
       ],
@@ -150,62 +151,62 @@ class MainNav extends React.Component {
         {
           referenceId: 2,
           id: 3,
-          name: '1-21 Injury Reporting',
+          name: "1-21 Injury Reporting",
         },
         {
           referenceId: 2,
           id: 4,
-          name: 'ASAP Reporting',
+          name: "ASAP Reporting",
         },
         {
           referenceId: 2,
           id: 5,
-          name: 'General ASAP Information',
+          name: "General ASAP Information",
         },
         {
           referenceId: 2,
           id: 6,
-          name: 'Flight Attendant Incident Report',
+          name: "Flight Attendant Incident Report",
         },
         {
           referenceId: 6,
           id: 7,
-          name: 'OJI',
+          name: "OJI",
         },
         {
           referenceId: 6,
           id: 8,
-          name: 'Leave',
+          name: "Leave",
         },
         {
           referenceId: 7,
           id: 9,
-          name: 'Pay',
+          name: "Pay",
         },
         {
           referenceId: 7,
           id: 10,
-          name: 'Benefits',
+          name: "Benefits",
         },
       ],
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
-
-  handleClick(e, level, id = '', name = '', closeMenu = false) {
-
+  handleClick(e, level, id = "", name = "", closeMenu = false) {
+    console.log("handleCLick", e.target);
+    e.stopPropagation();
     e.preventDefault();
     if (level === 2) {
       this.setState({
         navLevel: level,
-        navCategory: id,
+        navCategoryId: id,
+        navItemId: id,
       });
-    }
-    else if (level === 3) {
+    } else if (level === 3) {
       this.setState({
         navLevel: level,
-        navPages: id,
+        navPageId: id,
       });
     }
     if (closeMenu) {
@@ -221,14 +222,19 @@ class MainNav extends React.Component {
       <div style={{ height: window.innerHeight }} className="nav-container">
         <div className={`main-nav ${navActive ? "active" : "inactive"}`}>
           <ul>
-            <ListItems navItems={this.state.navItems} handleClick={this.handleClick} level={2} />
+            <ListNavItems
+              pages={this.state.pages}
+              categories={this.state.categories}
+              navItems={this.state.navItems}
+              handleClick={this.handleClick}
+              navLevel={this.state.navLevel}
+              {...this.state}
+            />
           </ul>
-          <SecondaryNav {...this.state} handleClick={this.handleClick} />
         </div>
       </div>
     );
   }
 }
-
 
 export default MainNav;
