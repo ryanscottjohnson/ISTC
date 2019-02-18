@@ -6,10 +6,11 @@
   height: 100%;
   width: 100%;
   left: -100%;
-  transition: all 500ms ease-in-out;
+  @include transition(all);
   color: $color-text;
   font-size: 1.1em;
   overflow: scroll;
+  cursor: pointer;
   &.active {
     left: 0;
   }
@@ -32,20 +33,27 @@
     &.selected {
       background: $color-text;
       color: $color-secondary;
+      @include transition(background);
     }
   }
 
   .secondary-nav {
     position: absolute;
     height: 100%;
-    width: calc(100% - 45px);
-    right: 100%;
-    top: 10%;
+    top: 7rem;
     background-color: $color-secondary;
-		transition: all 500ms ease-in-out;
-		border-left: 1px solid $color-tertiary;
+		@include transition(all);
+    border-left: 1px solid $color-tertiary;
+    cursor: pointer;
+    
     &.active {
       right: 0;
+      transform: translateX(0) !important;
+      .arrow.selected{
+      transition: transform 300ms ease-in-out;
+      transform: rotate(90deg);
+      float: right;
+      }
     }
     li {
       text-transform: capitalize;
@@ -54,13 +62,38 @@
   }
   .tertiary-nav {
     max-height: 0;
-    transition: all 500ms ease-in-out;
-    display: block;
+    @include transition(all);
+		display: block;
+		position: absolute;
+    bottom: 0;
+    opacity: 0;
+    cursor: pointer;
     &.active {
       height: 100%;
-      max-height: 1000px;
+			max-height: 1000px;
+			opacity: 1;
+      position: relative;
+      ul{
+        width: 120%;
+        left: -15px;
+        /* padding-left: 26px; */
+        position: relative;
+        background-color: $color-tertiary;
+        top: 15px;
+        
+        border-top: 1px solid $color-secondary;
+        li{
+          padding-left: 26px;
+          border-bottom: 1px solid $color-secondary;
+
+        &:last-child{
+          border-bottom: none;
+        }
+      }
+      }
     }
   }
+
   li {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -74,6 +107,7 @@
 		color: $color-text;
     i.arrow {
       float: right;
+      text-align: center;
     }
   }
 }
@@ -106,7 +140,7 @@
   background: #fff;
   float: left;
   content: "";
-  transition: all ease-in-out 0.4s;
+  @include transition(all);
   position: absolute;
   -webkit-transform: rotate(-180deg);
   -moz-transform: rotate(-180deg);

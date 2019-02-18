@@ -14,8 +14,14 @@ class SecondaryNav extends React.Component {
 
   render() {
     const { navLevel, navItems, navItemId, id } = this.props;
+    const width= window.innerWidth
+    const divStyle = {
+      transform: `translateX(${width}px)`,
+      width: `calc(${width-45}px)`
+
+    };
       return (
-        <div className={`secondary-nav ${navLevel >= 2 && navItemId == id ? "active" : "inactive"}`}>
+        <div style={divStyle} className={`secondary-nav ${navLevel >= 2 && navItemId == id ? "active" : "inactive"}`}>
           <ul>
             <ListNavCategories {...this.props} />
           </ul>

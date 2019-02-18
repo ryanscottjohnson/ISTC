@@ -11,17 +11,18 @@ class ListNavCategories extends React.Component {
 
     return this.props.categories.map((item) => {
       if (item.navigate) {
-        const {navPageId, handleClick} = this.props
+        const {navPageId, handleClick, tertiarySelected, toggleDropdown} = this.props
         const filteredPages = getPages(this.props, item.id);
+        
         return (
           <li className={item.id === navPageId? 'selected': ''}
             key={item.id}
             onClick={(e) => {
-              props.handleClick(e, 3, item.id, item.name);
+              props.handleClick(e, 3, item.id, item.name, false, true);
             }}
           >
             {item.name}
-            <i className="arrow fas fa-angle-right" />
+            <i className={`arrow fas fa-angle-right ${tertiarySelected && item.id === navPageId ?'selected':''}`} onClick={(e)=>toggleDropdown(e)} />
             <TertiaryNav {...props} id={item.id} pages={filteredPages} />
           </li>
         );
