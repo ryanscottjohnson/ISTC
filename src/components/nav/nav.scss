@@ -2,7 +2,7 @@
 
 .main-nav {
   background-color: $color-secondary;
-  position: absolute;
+  position: relative;
   height: 100%;
   width: 100%;
   left: -100%;
@@ -15,12 +15,14 @@
   }
 
 .user-container {
+  position: relative;
   height: 7rem;
   width: 100vw;
   background-image: url(../../../assets/sky.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
+  // z-index: 2;
   P {
     padding-left: 25px;
   }
@@ -34,11 +36,11 @@
   }
 
   .secondary-nav {
+    position: absolute;
     height: 100%;
     width: calc(100% - 45px);
     right: 100%;
-    position: absolute;
-    top: 0;
+    top: 10%;
     background-color: $color-secondary;
 		transition: all 500ms ease-in-out;
 		border-left: 1px solid $color-tertiary;
@@ -101,7 +103,7 @@
 .show-nav span {
   width: 3rem;
   height: 0.3rem;
-  background: $color-text;
+  background: #fff;
   float: left;
   content: "";
   transition: all ease-in-out 0.2s;
@@ -119,7 +121,8 @@
 }
 
 .show-nav span:first-child {
-  top: 1rem;
+	top: 1rem;
+	
 }
 
 .show-nav span:last-child {
@@ -131,7 +134,7 @@
   top: 0rem;
   bottom: 0rem;
   margin: auto;
-  background: $color-text;
+  background: #fff;
 }
 
 .show-nav.active span:last-child {
@@ -139,10 +142,10 @@
   top: 0rem;
   bottom: 0rem;
   margin: auto;
-  background: $color-text;
+  background: #fff;
 }
 
 .show-nav.active span:nth-child(2) {
   transform: rotate(-45deg);
-  display: none;
+  opacity: 0;
 }

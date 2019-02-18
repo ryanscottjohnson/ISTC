@@ -253,7 +253,11 @@ class MainNav extends React.Component {
     };
     this.handleClick = this.handleClick.bind(this);
   }
-
+  componentDidUpdate() {
+    if (!this.props.navActive && this.state.navLevel != null) {
+      this.setState({ navLevel: null, navCategoryId: null, navItemId: null, navPageId: null });
+    }
+  }
   handleClick(e, level, id = "", name = "", closeMenu = false) {
     console.log("handleCLick", e.target);
     e.stopPropagation();
@@ -282,10 +286,10 @@ class MainNav extends React.Component {
     return (
       <div style={{ height: window.innerHeight }} className="nav-container">
         <div className={`main-nav ${navActive ? "active" : "inactive"}`}>
-      <div className="user-container">
-        <img src="" alt=""/>
-        <p>Hello Donovan Beck</p>
-      </div>
+          <div className="user-container">
+            <img src="" alt="" />
+            <p>Hello Donovan Beck</p>
+          </div>
           <ul>
             <ListNavItems
               pages={this.state.pages}
