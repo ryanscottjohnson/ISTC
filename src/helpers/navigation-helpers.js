@@ -1,5 +1,5 @@
 export const getCategories = (props, categoryId) => {
-  const filteredCategories = props.categories.filter((x)=>{
+  const filteredCategories = props.categories.filter((x) => {
     if (x.referenceId == categoryId) {
       return x;
     } else {

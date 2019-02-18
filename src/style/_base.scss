@@ -4,6 +4,9 @@ $color-secondary:#127bb6;
 $color-tertiary: #19b1d1;
 $color-highlight: #b1d78a;
 $color-text: #fff;
+$branding-font: 'Poppins', Helvetica, Arial, sans-serif;
+$animation-duration: 500ms;
+$curve: ease-in-out;
 
 @keyframes fadeInText {
 	0% {
@@ -15,12 +18,10 @@ $color-text: #fff;
 	}
 }
 
-@keyframes moveInRight {
-	0% {
-		transform: translateX(10rem);
-	}
-
-	100% {
-		transform: translate(0);
-	}
+@mixin transition($element) {
+	-webkit-transition: $element $animation-duration $curve;
+	-moz-transition: $element $animation-duration $curve;
+	-ms-transition: $element $animation-duration $curve;
+	-o-transition: $element $animation-duration $curve;
+	transition: $element $animation-duration $curve;
 }

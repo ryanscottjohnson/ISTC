@@ -15,9 +15,10 @@ body {
 	position: relative;
 	color: $color-primary;
 	overflow: hidden;
+	font-family: $branding-font;
 }
 
 h1, h2, h3, h4, h5, h6, p {
-  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  
 	color: $color-text;
 }

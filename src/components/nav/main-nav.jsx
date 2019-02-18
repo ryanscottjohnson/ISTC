@@ -9,6 +9,7 @@ class MainNav extends React.Component {
       navCategoryId: null, // integer to match main nav items to categories
       navPageId: null, // integer to match main nav items to categories
       navItemId: null,
+      tertiarySelected: false,
 
       // level 1 **************************
       navItems: [
@@ -251,14 +252,14 @@ class MainNav extends React.Component {
       ],
     };
     this.handleClick = this.handleClick.bind(this);
+    this.toggleDropdown = this.toggleDropdown.bind(this);
   }
   componentDidUpdate() {
     if (!this.props.navActive && this.state.navLevel != null) {
       this.setState({ navLevel: null, navCategoryId: null, navItemId: null, navPageId: null });
     }
   }
-  handleClick(e, level, id = "", name = "", closeMenu = false) {
-    console.log("handleCLick", e.target);
+  handleClick(e, level, id = "", name = "", closeMenu = false, selected = false) {
     e.stopPropagation();
     e.preventDefault();
     if (level === 2) {
@@ -266,18 +267,35 @@ class MainNav extends React.Component {
         navLevel: level,
         navCategoryId: id,
         navItemId: id,
+
       });
     } else if (level === 3) {
       this.setState({
         navLevel: level,
         navPageId: id,
+        tertiarySelected: selected
       });
     }
     if (closeMenu) {
-      console.log("closeMenu", closeMenu);
       this.props.handleMenuOpenClose(this.setState({ navLevel: null, navCategoryId: null, navItemId: null, navPageId: null }));
     }
     this.props.getBreadcrumb(level, name);
+  }
+  toggleDropdown(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (this.state.navLevel === 3) {
+      this.setState({
+        navLevel: 2,
+        tertiarySelected: false
+      });
+    } else{
+      this.setState({
+        navLevel: 3,
+        tertiarySelected: true
+      });
+    }
+
   }
 
   render() {
@@ -296,6 +314,7 @@ class MainNav extends React.Component {
               navItems={this.state.navItems}
               handleClick={this.handleClick}
               navLevel={this.state.navLevel}
+              toggleDropdown={this.toggleDropdown}
               {...this.state}
             />
           </ul>
