@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 import SecondaryNav from './secondary-nav.jsx';
-import TertiaryNav from "./tertiary-nav.jsx";
-import { getCategories } from "../../helpers/navigation-helpers";
+import TertiaryNav from './tertiary-nav.jsx';
+import { getCategories } from '../../helpers/navigation-helpers';
 
 
 class ListNavItems extends React.Component {

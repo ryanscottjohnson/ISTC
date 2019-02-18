@@ -12,15 +12,18 @@ class Header extends React.Component {
       level1: null,
       level2: null,
       level3: null,
+      menuOpen: false,
     };
     this.handleMenuOpenClose = this.handleMenuOpenClose.bind(this);
     this.getBreadcrumb = this.getBreadcrumb.bind(this);
   }
 
-  handleMenuOpenClose() {
+  handleMenuOpenClose(callback=()=>{}) {
     this.setState(prevState => ({
       navActive: !prevState.navActive,
+      menuOpen: !prevState.menuOpen,
     }));
+    callback();
   }
 
   getBreadcrumb(level, name) {
@@ -53,7 +56,7 @@ class Header extends React.Component {
       <React.Fragment>
         <div className="header">
           <div className="header__logo" />
-          <Hamburger menuOpen={this.props.menuOpen} handleMenuOpenClose={this.handleMenuOpenClose} />
+          <Hamburger menuOpen={this.state.menuOpen} handleMenuOpenClose={this.handleMenuOpenClose} />
         </div>
         <BreadCrumb {...this.state} />
         <MainNav {...this.state} getBreadcrumb={this.getBreadcrumb} handleMenuOpenClose={this.handleMenuOpenClose} />

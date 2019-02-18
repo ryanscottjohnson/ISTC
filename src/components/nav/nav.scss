@@ -1,19 +1,32 @@
-
 @import "../../style/_base.scss";
 
 .main-nav {
   background-color: $color-secondary;
-  position: absolute;
+  position: relative;
   height: 100%;
   width: 100%;
   left: -100%;
-  transition: all 400ms ease-in;
+  transition: all 500ms ease-in-out;
   color: $color-text;
   font-size: 1.1em;
   overflow: scroll;
   &.active {
     left: 0;
   }
+
+.user-container {
+  position: relative;
+  height: 7rem;
+  width: 100vw;
+  background-image: url(../../../assets/sky.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  // z-index: 2;
+  P {
+    padding-left: 25px;
+  }
+}
 
   > ul > li.primary-nav {
     &.selected {
@@ -23,14 +36,14 @@
   }
 
   .secondary-nav {
+    position: absolute;
     height: 100%;
     width: calc(100% - 45px);
     right: 100%;
-    position: absolute;
-    top: 0;
+    top: 10%;
     background-color: $color-secondary;
-		transition: all 400ms ease-in;
-		border-left: 1px solid $color-text;
+		transition: all 500ms ease-in-out;
+		border-left: 1px solid $color-tertiary;
     &.active {
       right: 0;
     }
@@ -41,7 +54,7 @@
   }
   .tertiary-nav {
     max-height: 0;
-    transition: all 400ms ease-in;
+    transition: all 500ms ease-in-out;
     display: block;
     &.active {
       height: 100%;
@@ -53,7 +66,7 @@
     padding-bottom: 15px;
     padding-right: 15px;
     padding-left: 15px;
-    border-bottom: 1px solid $color-text;
+    border-bottom: 1px solid $color-tertiary;
     text-transform: uppercase;
     display: grid;
     overflow: hidden;
@@ -64,63 +77,6 @@
     }
   }
 }
-
-// hamburger menu
-@import "compass/css3";
-
-body {
-  background: darken(#34c4e8, 10%);
-  padding: 60px;
-}
-h1  {
-  color: lighten(#34c4e8, 30%);
-  font-family: 'Source Code Pro', sans-serif;
-  font-weight: 200;
-  margin: 0 0 40px;
-  text-align: center;
-}
-.menu {
-  cursor: pointer;
-  margin: 0 auto;
-  padding-left: 1.25em;
-  position: relative;
-  width: 40px;
-  height: 40px;
-}
-.menu-global {
-  backface-visibility: hidden;
-  position: absolute;
-  left: 0;
-  border-top: 7px solid white;
-  width: 100%;
-  transition: 0.55s;
-}
-.menu-top {
-  top: 0;
-}
-.menu-middle {
-  top: 18px;
-}
-.menu-bottom {
-  top: 36px;
-}
-.menu-top-click {
-  backface-visibility: hidden;
-  top: 15px;
-  transform: rotate(50deg);
-  transition: 0.55s 0.5s;
-}
-.menu-middle-click {
-  opacity: 0;
-}
-.menu-bottom-click {
-  backface-visibility: hidden;
-  top: 15px;
-  transform: rotate(-410deg);
-  transition: 0.55s 0.5s;
-}
-
-// ******************************
 
 .wrapper {
   display: inline-block;
@@ -147,10 +103,10 @@ h1  {
 .show-nav span {
   width: 3rem;
   height: 0.3rem;
-  background: $color-text;
+  background: #fff;
   float: left;
   content: "";
-  transition: all ease-in-out 0.2s;
+  transition: all ease-in-out 0.4s;
   position: absolute;
   -webkit-transform: rotate(-180deg);
   -moz-transform: rotate(-180deg);
@@ -165,31 +121,31 @@ h1  {
 }
 
 .show-nav span:first-child {
-  top: 1rem;
+	top: 1rem;
+	
 }
 
 .show-nav span:last-child {
   bottom: 1rem;
 }
 
+.show-nav.active span:first-child {
+  transform: rotate(45deg);
+  top: 0rem;
+  bottom: 0rem;
+  margin: auto;
+  background: #fff;
+}
 
-// .show-nav.active span:first-child {
-//   transform: rotate(45deg);
-//   top: 0rem;
-//   bottom: 0rem;
-//   margin: auto;
-//   background: $color-text;
-// }
+.show-nav.active span:last-child {
+  transform: rotate(-45deg);
+  top: 0rem;
+  bottom: 0rem;
+  margin: auto;
+  background: #fff;
+}
 
-// .show-nav.active span:last-child {
-//   transform: rotate(-45deg);
-//   top: 0rem;
-//   bottom: 0rem;
-//   margin: auto;
-//   background: $color-text;
-// }
-
-// .show-nav.active span:nth-child(2) {
-//   transform: rotate(-45deg);
-//   display: none;
-// }
+.show-nav.active span:nth-child(2) {
+  transform: rotate(-45deg);
+  opacity: 0;
+}

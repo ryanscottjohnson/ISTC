@@ -1,5 +1,5 @@
-import React from "react";
-import TertiaryNav from "./tertiary-nav.jsx";
+import React from 'react';
+import TertiaryNav from './tertiary-nav.jsx';
 import { getPages } from '../../helpers/navigation-helpers';
 
 class ListNavCategories extends React.Component {
@@ -8,13 +8,11 @@ class ListNavCategories extends React.Component {
   }
 
   renderCategoriesItems(props) {
-    // console.log("props from List Categories: ", props);
-    //console.log("filteredPages", filteredPages);
+
     return this.props.categories.map((item) => {
       if (item.navigate) {
         const {navPageId, handleClick} = this.props
         const filteredPages = getPages(this.props, item.id);
-        // console.log("level from List Categories: ", props);
         return (
           <li className={item.id === navPageId? 'selected': ''}
             key={item.id}
