@@ -1,4 +1,3 @@
-
 import React from "react";
 import ListNavItems from "./list-nav-items.jsx";
 
@@ -276,7 +275,7 @@ class MainNav extends React.Component {
     }
     if (closeMenu) {
       console.log("closeMenu", closeMenu);
-      this.props.handleMenuOpenClose(closeMenu);
+      this.props.handleMenuOpenClose(this.setState({ navLevel: null, navCategoryId: null, navItemId: null, navPageId: null }));
     }
     this.props.getBreadcrumb(level, name);
   }
@@ -307,3 +306,5 @@ class MainNav extends React.Component {
 }
 
 export default MainNav;
+
+
