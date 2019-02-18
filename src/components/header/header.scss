@@ -23,6 +23,7 @@
 .breadcrumb{
   position:absolute;
   background-color: $color-secondary;
+  text-transform: capitalize;
   width: 100%;
   color: $color-text;
 }
