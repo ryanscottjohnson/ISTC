@@ -282,6 +282,10 @@ class MainNav extends React.Component {
     return (
       <div style={{ height: window.innerHeight }} className="nav-container">
         <div className={`main-nav ${navActive ? "active" : "inactive"}`}>
+      <div className="user-container">
+        <img src="" alt=""/>
+        <p>Hello Donovan Beck</p>
+      </div>
           <ul>
             <ListNavItems
               pages={this.state.pages}

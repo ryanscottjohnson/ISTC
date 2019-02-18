@@ -5,6 +5,7 @@ class Hamburger extends React.Component {
   constructor(props){
 		super(props);
 	}
+	
 render () {
 	return (
 		<div onClick={this.props.handleMenuOpenClose} className="wrapper">
