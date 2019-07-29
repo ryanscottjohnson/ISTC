@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryanscottjohnson/ISTC.git"
+    "url": "git+https://github.com/ryanscottjohnson/AlaskaApp.git"
   },
   "author": "RyanScottJohnson",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ryanscottjohnson/ISTC/issues"
+    "url": "https://github.com/ryanscottjohnson/AlaskaApp/issues"
   },
-  "homepage": "https://github.com/ryanscottjohnson/ISTC#readme",
+  "homepage": "https://github.com/ryanscottjohnson/AlaskaApp#readme",
   "dependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
