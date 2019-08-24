@@ -23,4 +23,4 @@
   ```
 
   ## Have Fun!
-  # *Heroku version coming soon!*
+  # *Live version coming soon!*
